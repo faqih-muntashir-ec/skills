@@ -1,0 +1,15 @@
+{
+  "name": "md-to-pdf",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Convert Markdown + Mermaid files to professional PDF documents",
+  "bin": {
+    "md-to-pdf": "./convert.mjs"
+  },
+  "dependencies": {
+    "beautiful-mermaid": "^1.0.0",
+    "highlight.js": "^11.11.0",
+    "marked": "^15.0.0",
+    "puppeteer": "^24.0.0"
+  }
+}
