@@ -64,9 +64,10 @@ work.
 
 ### Matt Pocock — planning skills (removed)
 
-`write-a-prd` and `to-local-issues` were forks of `to-prd` and `to-issues` from
-**[github.com/mattpocock/skills](https://github.com/mattpocock/skills)**. Both
-were removed from this repository. Use the upstream plugin instead, where
+`write-a-prd`, `prd-to-plan`, and `to-local-issues` were forks of `to-prd`,
+`to-plan`, and `to-issues` from
+**[github.com/mattpocock/skills](https://github.com/mattpocock/skills)**. All
+three were removed from this repository. Use the upstream plugin instead, where
 `to-prd` is now **`/to-spec`** and `to-plan` + `to-issues` are merged into
 **`/to-tickets`**. `analyze-jira-ticket` points at those two skills.
 
