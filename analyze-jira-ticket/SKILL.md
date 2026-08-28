@@ -46,17 +46,19 @@ If the ticket is empty or too vague to analyze meaningfully, present what you fo
 
 If the ticket title contains the word "SPIKE" (case-insensitive), this ticket requires a **PRD workflow** instead of continuing to the standard implementation analysis. Follow this alternative flow:
 
-### 4a. Write a PRD (`/write-a-prd`)
+This flow uses three skills from the [Matt Pocock skills plugin](https://github.com/mattpocock/skills), so install that plugin before running it.
 
-Invoke the `write-a-prd` skill to collaboratively create a Product Requirements Document. Use your understanding from step 3 — the ticket's description, acceptance criteria, comments, and open questions — to seed the interview with the user instead of starting from scratch.
+### 4a. Write a spec (`/to-spec`)
+
+Invoke the `to-spec` skill to collaboratively create the spec (formerly called a PRD). Use your understanding from step 3 — the ticket's description, acceptance criteria, comments, and open questions — to seed the interview with the user instead of starting from scratch.
 
 ### 4b. Grill the user (`/grill-me`)
 
-Invoke the `grill-me` skill to stress-test the PRD. Walk through every decision branch, challenge assumptions, and resolve ambiguities until you and the user reach full shared understanding.
+Invoke the `grill-me` skill to stress-test the spec. Walk through every decision branch, challenge assumptions, and resolve ambiguities until you and the user reach full shared understanding.
 
-### 4c. Create an implementation plan (`/prd-to-plan`)
+### 4c. Break the spec into tickets (`/to-tickets`)
 
-Invoke the `prd-to-plan` skill to break the finalized PRD into phased vertical slices, saved as a local Markdown plan file.
+Invoke the `to-tickets` skill to split the finalized spec into tracer-bullet vertical slices, each declaring its blocking edges, so the work can be picked up one slice at a time.
 
 ### 4d. Stop here
 

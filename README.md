@@ -20,46 +20,55 @@ the skills work in any repository.
 
 ## Credits
 
-Several skills are adaptations rather than original work. They distill published
-material into a form Claude Code can act on. The source authors deserve the
-credit for the ideas; any error in the adaptation is mine.
+Several skills here are other people's work, or adaptations of published
+material. The source authors deserve the credit; any error in the adaptation is
+mine.
 
 ### Emil Kowalski — animation and design engineering
 
-`emil-design-eng`, `review-animations`, `improve-animations`,
-`find-animation-opportunities`, and `animation-vocabulary` encode the animation
-and UI craft philosophy of **[Emil Kowalski](https://emilkowal.ski/)**. The
-standards, target values, and easing curves come from his writing and his course
-at **[animations.dev](https://animations.dev/)** — including
-["You Don't Need Animations"](https://emilkowal.ski/ui/you-dont-need-animations),
-which `find-animation-opportunities` is built around.
+`emil-design-eng`, `apple-design`, `review-animations`, `improve-animations`,
+`find-animation-opportunities`, and `animation-vocabulary` all come from
+**[github.com/emilkowalski/skills](https://github.com/emilkowalski/skills)** by
+**[Emil Kowalski](https://emilkowal.ski/)**. They encode his animation and UI
+craft philosophy, taught in full at
+**[animations.dev](https://animations.dev/)**. `find-animation-opportunities` is
+built around his essay
+["You Don't Need Animations"](https://emilkowal.ski/ui/you-dont-need-animations);
+`apple-design` distills Apple's WWDC design talks, chiefly *Designing Fluid
+Interfaces* (WWDC 2018).
 
-If these skills are useful to you, go to the source. The course teaches far more
-than a skill file can carry.
+If these are useful to you, go to the source. The course teaches far more than a
+skill file can carry.
 
-### Apple — fluid interfaces
+### Cursor — code quality
 
-`apple-design` translates Apple's WWDC design talks to the web platform, chiefly
-*Designing Fluid Interfaces* (WWDC 2018), *The Details of UI Typography*
-(WWDC 2020), and *Principles of Great Design* (WWDC 2026). The projection
-function and spring parameters are Apple's, taken from the published sample code.
-Watch the talks at [developer.apple.com/videos](https://developer.apple.com/videos/).
+`deslop` and `thermo-nuclear-code-quality-review` are from the
+**[Cursor team kit](https://github.com/cursor/plugins/tree/main/cursor-team-kit/skills)**
+(`cursor/plugins`, `cursor-team-kit/skills`).
 
-### Google — engineering practices
+### Builder.io — Fable delegation
+
+`efficient-fable` is from
+**[github.com/BuilderIO/skills](https://github.com/BuilderIO/skills/tree/main/skills/efficient-fable)**
+by **[Builder.io](https://www.builder.io/)**, including its Excalidraw diagram
+and README.
+
+### Google Testing Blog — code craft
 
 `write-tests`, `write-review-feedback`, `name-things`, `simplify-code`,
-`write-code-comments`, and `write-logs-and-errors` draw on Google's public
-engineering guidance: the
-[Google Engineering Practices documentation](https://google.github.io/eng-practices/),
-the [Google Testing Blog](https://testing.googleblog.com/), and
-*Software Engineering at Google* (O'Reilly, 2020). The flakiness and
-review-tone statistics quoted in those skills are Google's published figures.
+`write-code-comments`, and `write-logs-and-errors` are mine, but the substance is
+not: each was compiled from posts on the
+**[Google Testing Blog](https://testing.googleblog.com/)**. The rules, the code
+examples, and the flakiness and review-tone statistics are Google's published
+work.
 
-### Cursor — `deslop`
+### Matt Pocock — planning skills (removed)
 
-`deslop` is taken from the **[Cursor team kit](https://github.com/cursor/plugins/tree/main/cursor-team-kit/skills/deslop)**
-(`cursor/plugins`, `cursor-team-kit/skills/deslop`), lightly edited. The rules
-for spotting AI-generated code slop are theirs.
+`write-a-prd` and `to-local-issues` were forks of `to-prd` and `to-issues` from
+**[github.com/mattpocock/skills](https://github.com/mattpocock/skills)**. Both
+were removed from this repository. Use the upstream plugin instead, where
+`to-prd` is now **`/to-spec`** and `to-plan` + `to-issues` are merged into
+**`/to-tickets`**. `analyze-jira-ticket` points at those two skills.
 
 ### Other tools referenced
 
