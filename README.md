@@ -55,6 +55,12 @@ the [Google Testing Blog](https://testing.googleblog.com/), and
 *Software Engineering at Google* (O'Reilly, 2020). The flakiness and
 review-tone statistics quoted in those skills are Google's published figures.
 
+### Cursor — `deslop`
+
+`deslop` is taken from the **[Cursor team kit](https://github.com/cursor/plugins/tree/main/cursor-team-kit/skills/deslop)**
+(`cursor/plugins`, `cursor-team-kit/skills/deslop`), lightly edited. The rules
+for spotting AI-generated code slop are theirs.
+
 ### Other tools referenced
 
 - `test-http-api-hurl` drives [hurl](https://hurl.dev/) by Orange OpenSource.
