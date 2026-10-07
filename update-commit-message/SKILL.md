@@ -54,3 +54,11 @@ git commit --amend -m "<new message>"
 ```
 
 After amending, remind the user they will need to force push (`git push --force-with-lease`) if the branch has already been pushed — but do NOT push automatically.
+
+## 5. Clean the prose
+
+Apply the by-hand word rules from `write-commit-message` (cut hedges, cut "comprehensive / robust /
+seamless / leverage", cut the "not only X but Y" shape) to the rewritten body, for the same reason as `write-commit-message`: a
+commit body is too short to be worth a full rewrite pass, and the tells are all single words.
+Run `avoid-ai-writing --voice blunt --context docs` over the body alone only when the body
+runs past three sentences.

@@ -11,7 +11,7 @@ Creates a new branch off a remote ref, cherry-picks one or more commits, and pus
 ## Inputs (from the user's request)
 
 Parse three things from the user's prompt:
-- **base ref** — the remote branch to branch off (e.g. `origin/hotfix/proj-999-drilldown-label`). Strip `origin/` if present; you'll add it back when needed.
+- **base ref** — the remote branch to branch off (e.g. `origin/hotfix/proj-999-fix-label`). Strip `origin/` if present; you'll add it back when needed.
 - **new branch name** — the local + remote branch to create (e.g. `hotfix/proj-974-proj-977`).
 - **commit SHA(s)** — one or more commits to cherry-pick, in the order they should be applied.
 
@@ -100,6 +100,6 @@ Keep the summary to 2–3 sentences.
 
 ## Notes
 
-- This skill only creates the branch and seeds it with commits. It does **not** open a PR — leave that to the user or to `/create-pr`.
+- This skill only creates the branch and seeds it with commits. It does **not** open a PR — leave that to the user or to `/pr create`.
 - If the user hasn't said which commit(s) to cherry-pick, ask. Do not guess from recent history.
 - If the new branch already exists locally, ask before overwriting — don't blow away in-progress work.

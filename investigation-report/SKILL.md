@@ -57,6 +57,8 @@ Match the form to the shape of the content.
 | Exact arithmetic, or a flat list of attributes | A table |
 | A judgement, a verdict, a consequence | Prose |
 
+The reader is a visual learner. Every mechanism, defect path, or scenario gets a figure drawn with the `diagram-design` skill, and the prose explains the figure.
+
 A diagram and a table beside it must not carry the same facts. Put the mechanism in the
 figure and the arithmetic in the table, then trim the sentence that restated either one.
 
@@ -101,3 +103,11 @@ Done when each of the nine passes on the current text, not on the text you remem
 Read [`MECHANICS.md`](MECHANICS.md) before the first edit to an existing report. It holds the
 exactly-one-match replace helper, the tag-balance check, the safe renumbering pass, the
 report-figure contract, and the verify loop that runs after every edit.
+
+## Clean the prose
+
+Before you deliver the report, invoke the `avoid-ai-writing` skill with `--mode rewrite`
+`--voice technical --context docs`, so the reader the report was written for reads the author's words instead of model
+phrasing.
+
+Pass the findings, the verdict sentences, and the summary. Hold back tables, code, query text, figure labels, and every cross-reference number.

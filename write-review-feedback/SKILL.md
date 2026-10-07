@@ -7,7 +7,7 @@ description: Rules for wording review comments and replies - discuss the code no
 
 A review comment is useful when the author can act on it without asking what you meant. Tone is not politeness alone: in Google's research, very negative comments were judged useful 57% of the time, neutral ones 79%.
 
-Sibling skills cover the mechanics: `dry-review` and `thermo-nuclear-code-quality-review` for finding issues, `inline-pr-comments` for where to post them, `address-pr-comments` for verifying a comment before acting on it. This skill covers the wording.
+Sibling skills cover the mechanics: the `pr` skill's `review` subcommand and `thermo-nuclear-code-quality-review` for finding issues, `pr comment` for where to post them, `pr address` for verifying a comment before acting on it. This skill covers the wording.
 
 ## As the reviewer
 
@@ -85,3 +85,11 @@ If a thread has gone two rounds without agreement, move to chat or a call. Text 
 - Every non-obvious comment states its reason.
 - Every low-priority comment carries a `Nit`, `Optional`, or `FYI` prefix.
 - Every reply that is not self-evident from the diff says what changed and why.
+
+## Clean the prose
+
+Before you post the comment or reply, invoke the `avoid-ai-writing` skill with `--mode rewrite`
+`--voice blunt --context technical-blog`, so the author reads the author's words instead of model
+phrasing.
+
+Pass the comment and reply text. Hold back code suggestions, diff hunks, identifiers, and the `Nit` / `Optional` / `FYI` prefixes.

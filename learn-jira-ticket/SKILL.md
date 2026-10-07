@@ -76,12 +76,12 @@ If you don't know which repos to search, ask the user. Do not guess wildly — a
 
 ## 5. Find legacy / reference code in local repos
 
-If the ticket involves porting, reverse-engineering, or replacing existing code, locate the source in the locally cloned repos:
+If the ticket involves porting, reverse-engineering, or replacing existing code, locate the source in the user's local repos:
 - grep / find for module names, class names, table names mentioned in the ticket
 - read the relevant entry-point files briefly (top of file, class declarations, key functions) so you can describe what's there — do **not** read entire large files
 - note the inheritance / call structure if a base class hides most of the logic
 
-If the user mentioned specific repos, restrict the search to those. Otherwise, list the candidate repos cloned locally and pick the most likely 2–4 by name.
+If the user mentioned specific repos, restrict the search to those. Otherwise, list the candidate local repos and pick the most likely 2–4 by name.
 
 If you can't find the legacy code, say so and ask the user where it lives.
 
@@ -141,3 +141,11 @@ A short numbered list — what to read first, second, third — so the user can 
 
 Do not propose an implementation plan and do not start coding. End by asking:
 > Want me to dig deeper into any of these references, or run `/analyze-jira-ticket <KEY>` to turn this into an implementation plan?
+
+## Clean the prose
+
+Before you present the brief, invoke the `avoid-ai-writing` skill with `--mode rewrite`
+`--voice technical --context docs`, so the user reads the author's words instead of model
+phrasing.
+
+Pass the section intros, the risks and observations, and the reading-order rationale. Hold back ticket keys, PR links, file paths, and table cells.

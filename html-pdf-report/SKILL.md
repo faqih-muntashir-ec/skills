@@ -14,7 +14,7 @@ Produce two files: a self-contained HTML report and its PDF, in `~/reports/`
 Rules:
 - **Self-contained**: inline `<style>`, no external CSS/JS/fonts. The PDF converter must not fetch anything.
 - Start with `<meta charset="utf-8">` and a `<title>`.
-- Plain English prose (per global CLAUDE.md). Exact identifiers, file paths, and line numbers stay precise.
+- Plain English prose. Exact identifiers, file paths, and line numbers stay precise.
 - Structure: `<h1>` title → meta table (ticket/author/date/status) → numbered `<h2>` sections, **executive summary first** → `<footer>` with method + date caveats.
 - State verification status honestly (e.g. "from code review, not yet verified against live data").
 

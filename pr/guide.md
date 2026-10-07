@@ -1,9 +1,3 @@
----
-name: write-verification-guide
-description: Write a reproducible "Verification Guide" for a PR — the run-now how-to a reviewer follows to confirm a change on a dev/staging environment, including preparing a seed when the environment lacks the data. Use when adding a Verification Guide to a PR description, when a reviewer needs steps to manually confirm a fix, or when dev data must be seeded to make a change observable.
-argument-hint: "[optional: PR number or short description of what to verify]"
----
-
 # Write Verification Guide
 
 A **Verification Guide** is the section of a PR a reviewer runs *now* to confirm the change behaves as claimed — distinct from "Test Plan after Merge" (a post-merge checklist) and from "Tested" (what you already ran). It names the exact environment, subject, data, route, and the expected result at each step, so a reviewer reproduces the result without reverse-engineering the session.
@@ -55,3 +49,11 @@ If *you* verified something by running specific queries/commands (SQL via a DB M
 ## Output
 
 Produce a `## Verification Guide` markdown block ready to drop into the PR body: a short prerequisites/subject paragraph, the inline seed (in a fenced ```sql block) when one is needed, a numbered step list with direct URLs and expected results, and a one-line cleanup. Keep every cited id/subject/URL real and resolved. Same accuracy rule as the rest of the PR: only reference fixtures, users, columns, and upstream dependencies that actually exist and are actually live.
+
+## Clean the prose
+
+Before you hand the guide to the PR, invoke the `avoid-ai-writing` skill with `--mode rewrite`
+`--voice technical --context docs`, so the reviewer reads the author's words instead of model
+phrasing.
+
+Pass the prerequisites paragraph, the step descriptions, and the expected-result sentences. Hold back the SQL, the commands, the URLs, and every id or subject name.

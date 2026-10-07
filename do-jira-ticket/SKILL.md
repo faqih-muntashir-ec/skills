@@ -21,7 +21,7 @@ Wait for the user to confirm the plan before proceeding. If the user wants adjus
 ## 2. Navigate to the target project
 
 If the analysis identified a different repo than the current working directory:
-- `cd` into the relevant repo directory
+- `cd` into the relevant repo (e.g. `<projects-dir>/<repo-name>`)
 - Verify the directory exists and is a git repo
 - If the repo isn't cloned locally, inform the user and ask them to clone it first
 
@@ -66,3 +66,13 @@ Work on the ticket using the full context from the analysis:
 - Reference acceptance criteria as your definition of done
 - Run linting, type checking, and tests as appropriate
 - Keep changes focused on the ticket scope — avoid unrelated modifications
+
+## 6. Verify UI changes in the real app
+
+Run this step when the change alters anything a user sees in the UI. Otherwise the ticket is done at step 5.
+
+1. Run the base branch and your branch locally, and take one before/after screenshot pair per visible change, each differing only in that change.
+2. Read the values that prove the change from the page, such as a computed color, a text or a count, and record them before and after.
+3. Embed the pairs in the PR's Preview table, and put the recorded values in its Tested section.
+
+Done when: the PR shows the uploaded before and after images, you opened every image and checked it, and the recorded values show the change.

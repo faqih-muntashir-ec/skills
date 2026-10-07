@@ -62,6 +62,23 @@ not: each was compiled from posts on the
 examples, and the flakiness and review-tone statistics are Google's published
 work.
 
+### Skills to install separately
+
+Several skills here call these skills by name. They are other people's work, so
+install them from the source:
+
+- `avoid-ai-writing` from
+  **[github.com/conorbronsdon/avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing)**
+  by **Conor Bronsdon**. Cleans the prose of PR bodies, tickets, reports and
+  review comments.
+- `diagram-design` from
+  **[github.com/cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design)**
+  by **Cathryn Lavery**. Draws the figures in `investigation-report`.
+- `show-me` from
+  **[github.com/humanlayer/skills](https://github.com/humanlayer/skills/tree/main/plugins/show-me)**
+  by **[HumanLayer](https://www.humanlayer.dev/)**. Builds the Change outline in
+  `pr`.
+
 ### Matt Pocock — planning skills (removed)
 
 `write-a-prd`, `prd-to-plan`, and `to-local-issues` were forks of `to-prd`,

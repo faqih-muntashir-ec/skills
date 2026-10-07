@@ -11,6 +11,7 @@ argument-hint: "[optional: type override, e.g. fix, feat, chore]"
 Run these in parallel:
 - `git diff --cached --stat` — check for staged changes. If nothing is staged, fall back to `git diff` (unstaged changes)
 - `git log --oneline -5` — recent commit style for scope/casing conventions
+- `git branch --show-current` — the branch the commit lands on. The session-start git status is a snapshot and can name a branch that is no longer checked out; if the live branch is not the one the work belongs to, switch before you commit.
 
 If there are no staged **and** no unstaged changes, tell the user there is nothing to commit and stop.
 
@@ -46,5 +47,15 @@ Do not hard-wrap lines. Let the git client or viewer handle wrapping.
 
 ## 4. Stage and commit
 
-- If invoked from another skill (e.g. `/create-pr`), **do NOT ask for confirmation** — stage all changed files and commit directly.
+- If invoked from another skill (e.g. `/pr create`), **do NOT ask for confirmation** — stage all changed files and commit directly.
 - If invoked standalone by the user, present the generated commit message and ask for confirmation before committing. If nothing was staged initially (fell back to unstaged), also confirm which files to stage.
+
+## 5. Clean the prose
+
+A commit message is short, so apply these word rules by hand rather than invoking `avoid-ai-writing`: cut
+hedges, cut "comprehensive / robust / seamless / leverage", cut the "not only X but Y" shape,
+and cut any sentence that only restates the subject line. The history reads better when each
+body line carries a fact the diff does not show on its own.
+
+Run the full pass (`--voice blunt --context docs`) only when the body runs past three
+sentences, and pass the body alone — never the subject line, the type/scope, or a footer.

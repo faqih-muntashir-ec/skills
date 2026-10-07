@@ -1,8 +1,3 @@
----
-name: inline-pr-comments
-description: Post PR review findings as inline comments anchored to file:line, keeping the review body to the summary alone. Use when submitting a code review to GitHub, when the code-reviewer agent reaches review submission, or when another skill needs the inline-comment submission format.
----
-
 # Inline PR comments
 
 This skill replaces the Output Format and GitHub review submission behavior of the code-reviewer plugin agent. When that agent reaches review submission, follow the steps here in place of its default "Output Format" and "GitHub Approval Comments" sections.
@@ -59,6 +54,41 @@ GitHub only accepts inline comments on lines inside the diff. A finding about pr
 - Blocking issue: state the problem, why it matters, and the fix. Add a code suggestion where one applies.
 - Suggestion or nit: state what to improve and why.
 
+### When a finding earns a picture
+
+A finding that sits on one line reads fine as prose. A finding whose subject is a **shape** costs the author a mental reconstruction that a six-line sketch hands them for free: a call path across several files, a control-flow branch that is missing, a state two places disagree about, a layout this PR reorganises. Sketch those. Leave every other finding as prose, because a diagram on a one-line nit buries the nit.
+
+Pick the smallest form that carries the point:
+
+| Form | Use it for |
+|---|---|
+| Pseudocode | logic, an algorithm, a control-flow branch |
+| Call tree | runtime order across functions |
+| Component tree | UI structure, with the state and module boundaries that matter |
+| Shallow file tree | file responsibility, or a layout this PR reorganises |
+| `diff` of any of the four above | a shape that exists already, where the point is what changes |
+| Mermaid `sequenceDiagram` | interaction between parts over time |
+
+The `diff` form fits most findings, because a PR comment argues about a change. Match the diff shape to the topic — here, a call tree:
+
+```diff
+ submitForm
+   createSession
++    validateSession
+     launchAgent
+-  navigateToSession
+```
+
+Every visual ships as a fenced block inside the comment body, where GitHub renders both markdown and Mermaid. The comment column is narrow, so hold a sketch to about 10 lines and a Mermaid graph to about 6 nodes, and keep only the calls, files, props and states the finding turns on. One visual per comment, at most.
+
+## Clean the prose
+
+Run this before you build the payload, so the pass never sees the JSON.
+
+Invoke the `avoid-ai-writing` skill with `--mode rewrite --voice blunt --context technical-blog`, so the author reads the author's words instead of model phrasing. Pass the body text of every finding and the prose of the review summary. Hold back the `path` and `line` anchors, code suggestion blocks, every fenced sketch or diagram, the checklist lines, and the payload itself. `~/.claude/docs/prose-cleanup.md` carries the general pass and hold-back rules, plus the condition for skipping the pass on a finding too short to argue anything.
+
+Done when every finding body and the summary has been through the pass, and every anchor, identifier, and code block reads exactly as it did before.
+
 ## Submitting the review
 
 `gh pr review` has no support for inline comments, so submit through `gh api`:
@@ -96,7 +126,7 @@ cat <<REVIEW_EOF > /tmp/pr-review.json
 {
   "commit_id": "$HEAD_SHA",
   "event": "REQUEST_CHANGES",
-  "body": "## Summary\n\n**Assessment**: REQUEST_CHANGES\n**Stack**: SSR\n**Jira**: PROJ-1234 - 2/3 criteria met\n**Commits**: Compliant\n\n## Verification\n- [x] Dependencies synchronized\n- [x] Self-verification passed\n**Confidence**: HIGH",
+  "body": "## Summary\n\n**Assessment**: REQUEST_CHANGES\n**Stack**: SSR\n**Jira**: TOOL-1234 - 2/3 criteria met\n**Commits**: Compliant\n\n## Verification\n- [x] Dependencies synchronized\n- [x] Self-verification passed\n**Confidence**: HIGH",
   "comments": [
     {
       "path": "src/controllers/example-controller.ts",

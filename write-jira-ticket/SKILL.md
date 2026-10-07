@@ -15,6 +15,9 @@ Three parts, in this order. Match the format of the tickets already in the proje
 
 **Background:** what is true today, why it hurts, and what this ticket changes. Two or three short paragraphs. Name the failure that happens without this ticket. Put the one hard judgement call here — the trap the implementer would otherwise walk into.
 
+- **State the business reason, not only the defect.** Name why the team wants the change — often parity with a tool people already use ("DB manager's Generate always does X; MC should follow the same behavior"). A defect description alone leaves the reviewer asking "why now?". If the reason is not clear from the conversation, ask for it before creating the ticket.
+- **Keep it as short as the sibling tickets.** Match their length, not only their shape. Cut what the implementer finds in the code in one step: lists of existing arguments, full file paths for every function, notes that correct a misconception nobody on the team holds, and deep mechanism detail. Keep the gap, the reason, the one trap, and the scope boundary.
+
 **Acceptance Criteria:** a flat bullet list, each bullet one checkable end state.
 
 - One claim per bullet. A bullet with "and then" is two bullets.
@@ -34,7 +37,7 @@ Fill every row. If a row stays empty, say why in your reply — an unset field i
 | Project + issue type | The user's board. Epic for the container, Story for work, Bug for a defect |
 | Summary | The deliverable, no ticket-id prefix, no trailing period |
 | Parent | The epic. Every story belongs to one |
-| Story points | Fibonacci: 1, 2, 3, 5, 8, 13. A 13 means "split this if the sprint cannot hold it" |
+| Story points | Fibonacci: 1, 2, 3, 5, 8, 13. A 13 means "split this if the sprint cannot hold it". Estimate the approach the user chose, not the options you offered: when a choice shrinks the scope (a UI option becomes a one-line API change), re-estimate before you create the ticket. Waiting time (a staging run) and a sign-off add little effort |
 | Sprint | The sprint id, not its name |
 | Assignee | Ask whose name goes on it if the user did not say |
 | Links | Blocks links from the dependency order |
@@ -72,3 +75,11 @@ Build the dependency order first — for each ticket, which tickets must land be
 An epic carries the body, the assignee, and its status. Jira rolls its children's points up, so leave the epic's own points empty unless the user asks for a number. If the epic and its children all sit in one sprint and the epic also carries points, the sprint report counts those points twice — say so once, then do what the user asked.
 
 An epic is Done only when every child is Done.
+
+## Clean the prose
+
+Before you create the ticket, invoke the `avoid-ai-writing` skill with `--mode rewrite`
+`--voice professional --context docs`, so the person who picks the ticket up reads the author's words instead of model
+phrasing.
+
+Pass the description body and each acceptance-criterion sentence. Hold back the field values, ticket keys, links, code, and the wiki markup that Jira needs exact.

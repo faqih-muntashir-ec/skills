@@ -7,7 +7,7 @@ description: Rules for comments that stay true - delete the need first, keep onl
 
 A comment earns its place when a competent reader cannot derive it from the code.
 
-My own comment rules live in `~/.claude/docs/code-comments.md`. Read that file first. This skill adds the rules it does not cover.
+If the project has its own comment rules (in `CLAUDE.md`, `AGENTS.md`, or a style guide), read them first. This skill adds the rules they do not cover.
 
 ## 1. Try to remove the need before you write it
 
