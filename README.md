@@ -73,11 +73,12 @@ install them from the source:
   review comments.
 - `diagram-design` from
   **[github.com/cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design)**
-  by **Cathryn Lavery**. Draws the figures in `investigation-report`.
+  by **Cathryn Lavery**. Draws the figures in `investigation-report` and
+  `teach-in-chat`.
 - `show-me` from
   **[github.com/humanlayer/skills](https://github.com/humanlayer/skills/tree/main/plugins/show-me)**
   by **[HumanLayer](https://www.humanlayer.dev/)**. Builds the Change outline in
-  `pr`.
+  `pr` and the small visuals in `teach-in-chat`.
 
 ### Matt Pocock — planning skills (removed)
 
